@@ -80,3 +80,11 @@ button {
 button:hover {
   background: #00c2a8;
 }
+#search {
+  width: 250px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+}
