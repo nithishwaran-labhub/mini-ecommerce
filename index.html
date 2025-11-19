@@ -4,55 +4,34 @@
   <meta charset="UTF-8">
   <title>Mini E-Commerce</title>
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Wishlist + Cart icon styles */
+    .header-buttons {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .wishlist-container {
+      position: relative;
+      font-size: 18px;
+    }
+    .wishlist-badge {
+      position: absolute;
+      top: -8px;
+      right: -12px;
+      background: red;
+      color: white;
+      font-size: 12px;
+      padding: 2px 6px;
+      border-radius: 50%;
+    }
+  </style>
 </head>
 <body>
 
 <!-- LOGIN PROTECTION -->
 <script>
   if (localStorage.getItem("loggedIn") !== "true") {
-      window.location.href = "login.html";
-  }
-</script>
-
-<header>
-  <h1>🛒 Mini E-Commerce Shop</h1>
-
-  <input type="text" id="search" placeholder="Search products...">
-
-  <div class="header-buttons">
-    <a href="wishlist.html" class="wishlist-icon">❤️ Wishlist</a>
-    <a href="cart.html" class="cart-icon">Cart</a>
-  </div>
-</header>
-
-
-  <!-- LOGOUT BUTTON -->
-  <button onclick="logout()" class="logout-btn" 
-    style="background:#ff4747; border:none; padding:10px 20px; border-radius:10px; color:white; cursor:pointer;">
-    Logout
-  </button>
-</header>
-
-<!-- CATEGORY BUTTONS -->
-<div class="categories">
-  <button onclick="filterCategory('all')">All</button>
-  <button onclick="filterCategory('shoes')">Shoes</button>
-  <button onclick="filterCategory('watch')">Watches</button>
-  <button onclick="filterCategory('bag')">Bags</button>
-</div>
-
-<!-- PRODUCTS SECTION -->
-<section class="products" id="product-list"></section>
-
-<script src="script.js"></script>
-
-<!-- LOGOUT FUNCTION -->
-<script>
-function logout() {
-  localStorage.removeItem("loggedIn");
-  window.location.href = "login.html";
-}
-</script>
-
-</body>
-</html>
+      window.loca
