@@ -5,13 +5,16 @@ body {
   background: #f0f3f7;
 }
 
+/* ✅ Only ONE header block */
 header {
   background: #1e1e2f;
   color: white;
   padding: 20px;
   display: flex;
+  gap: 20px;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;   /* important for search bar visibility */
 }
 
 header h1 {
@@ -26,6 +29,15 @@ header h1 {
   text-decoration: none;
   color: white;
   font-weight: bold;
+}
+
+#search {
+  width: 250px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 15px;
 }
 
 .products {
@@ -78,25 +90,5 @@ button {
 }
 
 button:hover {
-  background: #00c2a8;
+ background: #00c2a8;
 }
-header {
-  background: #1e1e2f;
-  color: white;
-  padding: 20px;
-  display: flex;
-  gap: 20px;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-#search {
-  width: 250px;
-  padding: 10px;
-  border-radius: 8px;
-  border: none;
-  outline: none;
-  font-size: 15px;
-}
-
