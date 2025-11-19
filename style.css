@@ -5,7 +5,7 @@ body {
   background: #f0f3f7;
 }
 
-/* ✅ Only ONE header block */
+/* ✅ Final header style (DARK VERSION) */
 header {
   background: #1e1e2f;
   color: white;
@@ -14,7 +14,7 @@ header {
   gap: 20px;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;   /* important for search bar visibility */
+  flex-wrap: wrap;
 }
 
 header h1 {
@@ -40,6 +40,7 @@ header h1 {
   font-size: 15px;
 }
 
+/* PRODUCTS GRID */
 .products {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -86,37 +87,13 @@ button {
   border-radius: 10px;
   cursor: pointer;
   font-size: 15px;
-  margin-top: 10px;
 }
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background: #f8f8f8;
-}
-
-#search {
-    width: 300px;
-    padding: 10px 15px;
-    border-radius: 25px;
-    border: 1px solid #ccc;
-    font-size: 16px;
-}
-
-.cart-icon {
-    font-size: 18px;
-    text-decoration: none;
-    background: black;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 20px;
-}
-
 
 button:hover {
  background: #00c2a8;
 }
+
+/* CATEGORY BUTTONS */
 .categories {
   display: flex;
   gap: 10px;
