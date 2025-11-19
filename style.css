@@ -112,3 +112,21 @@ button:hover {
 .categories button:hover {
   background: #058a79;
 }
+.header-buttons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.wishlist-icon {
+  background: #ff4d6d;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.wishlist-icon:hover {
+  background: #d93654;
+}
