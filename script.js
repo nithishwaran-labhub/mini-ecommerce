@@ -7,13 +7,12 @@ let products = [
 let productList = document.getElementById("product-list");
 let searchBox = document.getElementById("search");
 
-
 // -------------------- DISPLAY PRODUCTS --------------------
 function displayProducts(items) {
   productList.innerHTML = "";
   items.forEach((p) => {
     productList.innerHTML += `
-      <div class="product">
+      <div class="product" data-category="${p.category}">
         <img src="${p.img}">
         <h3>${p.name}</h3>
         <p>₹${p.price}</p>
@@ -24,7 +23,6 @@ function displayProducts(items) {
 }
 
 displayProducts(products);
-
 
 // -------------------- SEARCH FILTER --------------------
 searchBox.addEventListener("input", () => {
@@ -37,17 +35,16 @@ searchBox.addEventListener("input", () => {
   displayProducts(filtered);
 });
 
-
 // -------------------- CATEGORY FILTER --------------------
 function filterCategory(cat) {
   if (cat === "all") {
     displayProducts(products);
-  } else {
-    let filtered = products.filter((item) => item.category === cat);
-    displayProducts(filtered);
+    return;
   }
-}
 
+  let filtered = products.filter((item) => item.category === cat);
+  displayProducts(filtered);
+}
 
 // -------------------- CART LOGIC --------------------
 function addToCart(id) {
@@ -58,15 +55,4 @@ function addToCart(id) {
   localStorage.setItem("cart", JSON.stringify(cart));
 
   alert("Added to cart!");
-}
-function filterCategory(category) {
-  let products = document.querySelectorAll(".product");
-
-  products.forEach(item => {
-    if (category === "all" || item.dataset.category === category) {
-      item.style.display = "block";
-    } else {
-      item.style.display = "none";
-    }
-  });
 }
