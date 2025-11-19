@@ -44,3 +44,17 @@ function addToCart(id) {
 
   alert("Added to cart!");
 }
+document.getElementById("search").addEventListener("input", function () {
+    let value = this.value.toLowerCase();
+    let products = document.querySelectorAll(".product");
+
+    products.forEach(product => {
+        let name = product.querySelector("h3").innerText.toLowerCase();
+
+        if (name.includes(value)) {
+            product.style.display = "block";
+        } else {
+            product.style.display = "none";
+        }
+    });
+});
