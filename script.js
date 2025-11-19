@@ -1,7 +1,7 @@
 let products = [
-  {id: 1, name: "Shoes", price: 999, img: "products/item1.jpg"},
-  {id: 2, name: "Watch", price: 699, img: "products/item2.jpg"},
-  {id: 3, name: "Bag", price: 499, img: "products/item3.jpg"},
+  { id: 1, name: "Shoes", price: 999, img: "products/item1.jpg" },
+  { id: 2, name: "Watch", price: 699, img: "products/item2.jpg" },
+  { id: 3, name: "Bag", price: 499, img: "products/item3.jpg" },
 ];
 
 let productList = document.getElementById("product-list");
@@ -26,4 +26,3 @@ function addToCart(id) {
 
   alert("Added to cart!");
 }
-
