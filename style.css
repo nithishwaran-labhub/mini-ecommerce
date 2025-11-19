@@ -117,3 +117,21 @@ header {
 button:hover {
  background: #00c2a8;
 }
+.categories {
+  display: flex;
+  gap: 10px;
+}
+
+.categories button {
+  padding: 8px 15px;
+  background: #00c2a8;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.categories button:hover {
+  background: #058a79;
+}
