@@ -61,17 +61,4 @@ function addToCart(id) {
 
 // -------------------- WISHLIST LOGIC --------------------
 function addToWishlist(id) {
-  let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
-  let product = products.find((p) => p.id === id);
-
-  // Prevent duplicates
-  if (wishlist.some(item => item.id === id)) {
-    alert("Already in wishlist!");
-    return;
-  }
-
-  wishlist.push(product);
-  localStorage.setItem("wishlist", JSON.stringify(wishlist));
-
-  alert("Added to wishlist!");
-}
+  let wishlist = JSON.parse(
