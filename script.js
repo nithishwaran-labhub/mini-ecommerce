@@ -16,7 +16,9 @@ function displayProducts(items) {
         <img src="${p.img}">
         <h3>${p.name}</h3>
         <p>₹${p.price}</p>
+
         <button onclick="addToCart(${p.id})">Add to Cart</button>
+        <button onclick="addToWishlist(${p.id})" style="background:#ff4081;">♡ Wishlist</button>
       </div>
     `;
   });
@@ -55,4 +57,21 @@ function addToCart(id) {
   localStorage.setItem("cart", JSON.stringify(cart));
 
   alert("Added to cart!");
+}
+
+// -------------------- WISHLIST LOGIC --------------------
+function addToWishlist(id) {
+  let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+  let product = products.find((p) => p.id === id);
+
+  // Prevent duplicates
+  if (wishlist.some(item => item.id === id)) {
+    alert("Already in wishlist!");
+    return;
+  }
+
+  wishlist.push(product);
+  localStorage.setItem("wishlist", JSON.stringify(wishlist));
+
+  alert("Added to wishlist!");
 }
