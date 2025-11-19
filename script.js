@@ -59,3 +59,14 @@ function addToCart(id) {
 
   alert("Added to cart!");
 }
+function filterCategory(category) {
+  let products = document.querySelectorAll(".product");
+
+  products.forEach(item => {
+    if (category === "all" || item.dataset.category === category) {
+      item.style.display = "block";
+    } else {
+      item.style.display = "none";
+    }
+  });
+}
