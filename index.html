@@ -6,27 +6,26 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
 <header>
   <h1>🛒 Mini E-Commerce Shop</h1>
+
   <input type="text" id="search" placeholder="Search products...">
+
   <a href="cart.html" class="cart-icon">Cart</a>
 </header>
 
-<!-- ADD CATEGORIES HERE -->
+<!-- CATEGORY BUTTONS (NOW CORRECTLY DISPLAYED) -->
 <div class="categories">
   <button onclick="filterCategory('all')">All</button>
-  <button onclick="filterCategory('electronics')">Electronics</button>
-  <button onclick="filterCategory('fashion')">Fashion</button>
   <button onclick="filterCategory('shoes')">Shoes</button>
-  <button onclick="filterCategory('home')">Home</button>
+  <button onclick="filterCategory('watch')">Watches</button>
+  <button onclick="filterCategory('bag')">Bags</button>
 </div>
 
+<!-- PRODUCTS SECTION -->
+<section class="products" id="product-list"></section>
 
-
-
-  <section class="products" id="product-list"></section>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
-
