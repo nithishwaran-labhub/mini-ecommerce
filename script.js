@@ -5,18 +5,36 @@ let products = [
 ];
 
 let productList = document.getElementById("product-list");
+let searchBox = document.getElementById("search");
 
-products.forEach((p) => {
-  productList.innerHTML += `
-    <div class="product">
-      <img src="${p.img}">
-      <h3>${p.name}</h3>
-      <p>₹${p.price}</p>
-      <button onclick="addToCart(${p.id})">Add to Cart</button>
-    </div>
-  `;
+function displayProducts(items) {
+  productList.innerHTML = "";
+  items.forEach((p) => {
+    productList.innerHTML += `
+      <div class="product">
+        <img src="${p.img}">
+        <h3>${p.name}</h3>
+        <p>₹${p.price}</p>
+        <button onclick="addToCart(${p.id})">Add to Cart</button>
+      </div>
+    `;
+  });
+}
+
+displayProducts(products);
+
+// 🔍 Search Filter
+searchBox.addEventListener("keyup", () => {
+  let text = searchBox.value.toLowerCase();
+
+  let filtered = products.filter((item) =>
+    item.name.toLowerCase().includes(text)
+  );
+
+  displayProducts(filtered);
 });
 
+// Cart Logic
 function addToCart(id) {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
   let product = products.find((p) => p.id === id);
